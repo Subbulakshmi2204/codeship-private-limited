@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form Validation</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background-color: lightgray;
+            padding: 20px;
+        }
+
+        .error{
+            color: red;
+            font-size: 14px;
+        }
+
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        table{
+            margin-top: 20px;
+            width: 70%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h2>Student Information Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Name:
+    <input type="text" id="name">
+    <span class="error" id="nameError"></span>
+
+    <br><br>
+
+    Age:
+    <input type="number" id="age">
+    <span class="error" id="ageError"></span>
+
+    <br><br>
+
+    City:
+    <input type="text" id="city">
+    <span class="error" id="cityError"></span>
+
+    <br><br>
+
+    Phone Number:
+    <input type="text" id="phno">
+    <span class="error" id="phoneError"></span>
+
+    <br><br>
+
+    Gender:
+    <input type="text" id="gender">
+    <span class="error" id="genderError"></span>
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<h2>Submitted Details</h2>
+
+<table id="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Gender</th>
+    </tr>
+
+</table>
+
+<script>
+
+function validateForm()
+{
+    // Get input values
+    let name = document.getElementById("name").value.trim();
+    let age = document.getElementById("age").value.trim();
+    let city = document.getElementById("city").value.trim();
+    let phno = document.getElementById("phno").value.trim();
+    let gender = document.getElementById("gender").value.trim();
+
+    // Clear old errors
+    document.getElementById("nameError").innerHTML = "";
+    document.getElementById("ageError").innerHTML = "";
+    document.getElementById("cityError").innerHTML = "";
+    document.getElementById("phoneError").innerHTML = "";
+    document.getElementById("genderError").innerHTML = "";
+
+    let isValid = true;
+
+    // Name validation
+    let namePattern = /^[A-Za-z ]+$/;
+
+    if(name == "")
+    {
+        document.getElementById("nameError").innerHTML =
+        "Name is required";
+
+        isValid = false;
+    }
+    else if(!namePattern.test(name))
+    {
+        document.getElementById("nameError").innerHTML =
+        "Name should contain only letters";
+
+        isValid = false;
+    }
+
+    // Age validation
+    if(age == "")
+    {
+        document.getElementById("ageError").innerHTML =
+        "Age is required";
+
+        isValid = false;
+    }
+    else if(age < 18 || age > 60)
+    {
+        document.getElementById("ageError").innerHTML =
+        "Age must be between 18 and 60";
+
+        isValid = false;
+    }
+
+    // City validation
+    let cityPattern = /^[A-Za-z ]+$/;
+
+    if(city == "")
+    {
+        document.getElementById("cityError").innerHTML =
+        "City is required";
+
+        isValid = false;
+    }
+    else if(!cityPattern.test(city))
+    {
+        document.getElementById("cityError").innerHTML =
+        "City should contain only letters";
+
+        isValid = false;
+    }
+
+    // Phone validation
+    let phonePattern = /^[0-9]{10}$/;
+
+    if(phno == "")
+    {
+        document.getElementById("phoneError").innerHTML =
+        "Phone number is required";
+
+        isValid = false;
+    }
+    else if(!phonePattern.test(phno))
+    {
+        document.getElementById("phoneError").innerHTML =
+        "Phone number must contain exactly 10 digits";
+
+        isValid = false;
+    }
+
+    // Gender validation
+    let genderPattern = /^(Male|Female|Other)$/i;
+
+    if(gender == "")
+    {
+        document.getElementById("genderError").innerHTML =
+        "Gender is required";
+
+        isValid = false;
+    }
+    else if(!genderPattern.test(gender))
+    {
+        document.getElementById("genderError").innerHTML =
+        "Enter Male, Female or Other";
+
+        isValid = false;
+    }
+
+    // Stop if invalid
+    if(!isValid)
+    {
+        return false;
+    }
+
+    // Add data to table
+    let table = document.getElementById("table");
+
+    let row = table.insertRow();
+
+    row.insertCell(0).innerHTML = name;
+    row.insertCell(1).innerHTML = age;
+    row.insertCell(2).innerHTML = city;
+    row.insertCell(3).innerHTML = phno;
+    row.insertCell(4).innerHTML = gender;
+
+    // Reset form
+    document.querySelector("form").reset();
+
+    return false;
+}
+
+</script>
+
+</body>
+</html>
