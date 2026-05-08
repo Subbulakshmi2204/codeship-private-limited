@@ -1,0 +1,55 @@
+<html>
+
+<head style="background-color:powderblue;">
+
+<title>SUBMITTED DATA</title>
+
+<style>
+
+table
+{border-collapse:collapse;
+width:50%;
+}
+th,td
+{ border: 1px solid black;
+padding: 10px;
+text-align: center;
+}
+th
+{background-color : lightgray;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Submitted Details</h2>
+
+<table>
+
+	<tr>
+		<th>Name</th>
+		<th>Age</th>
+		<th>City</th>
+		<th>Phone Number</th>
+		<th>Gender</th>
+	</tr>
+	
+	{% for row in all_data %}
+	<tr>
+		<td>{{row.name}}</td>
+		<td>{{row.age}}</td>
+		<td>{{row.city}}</td>
+		<td>{{row.phno}}</td>
+		<td>{{row.gender}}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+<br><br>
+
+<a href="/"> Add Another Record</a>
+
+</body>
+</html>
