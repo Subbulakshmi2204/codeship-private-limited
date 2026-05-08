@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tamil Muhurtham</title>
+        <style>
+
+                * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .hero-buttons button{
+            padding:15px 35px;
+            margin:10px;
+            border:none;
+            border-radius:5px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        body
+        {
+            background: #F5F5F5;
+        }
+        .navbar
+        {
+            width:100%;
+            height:80px;
+            background:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:0 50px;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+            position:fixed;
+        }
+        .logo img{
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            object-fit:cover;
+        }
+        .nav-links a
+{
+    color:black;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:15px;
+}
+        .nav-links{
+             margin-left:auto;
+        }
+
+        .hero{
+            width:100%;
+            height:100vh;
+
+            background:linear-gradient(rgba(0,0,0,0.45),
+            rgba(0,0,0,0.45)),
+            url('https://t3.ftcdn.net/jpg/03/38/79/70/360_F_338797073_CsO0jjvg8f8E9WqPJJn072tBwYrsFOcH.jpg');
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:20px;
+        }
+
+         .hero-content h1{
+            font-size:40px;
+            margin-bottom:25px;
+            font-weight:bold;
+        }
+
+        .hero-content p{
+            font-size:22px;
+            margin-bottom:35px;
+            color:#f1f1f1;
+        }
+        .buttons{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .btn{
+            padding: 12px 25px;
+            border-radius: 5px;
+            border: none;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .register-btn{
+            background:#e85d75;
+            color:white;
+        }
+
+        .register-btn:hover{
+            background:#cf4760;
+        }
+         .login-btn{
+            background-color: #e3f2fd; 
+        }
+
+        .login-btn:hover{
+            background:#ececec;
+        }
+        .matchmaking-section{
+            width:100%;
+            padding: 80px 20px;
+            background:#f7f7f7;
+        }
+        .elite-card{
+             background:#02084b;
+             color:#f8c35f;
+             border-radius:25px;
+             padding:40px 50px;
+
+             display:flex;
+             justify-content:space-between;
+             align-items:center;
+             flex-wrap:wrap;
+
+            max-width:1300px;
+            margin:auto;
+        }
+        .elite-left
+        {
+            width:70%;
+        }
+        .elite-features{
+        display:flex;
+        gap:18px;
+        flex-wrap:wrap;
+        font-size:18px;
+    }
+
+    .elite-right{
+        text-align:center;
+    }
+
+    .elite-right h2{
+        margin-bottom:25px;
+        font-size:28px;
+    }
+
+    .elite-right button{
+        background:#f3c566;
+        color:black;
+        border:none;
+        padding:15px 45px;
+        border-radius:10px;
+        font-size:18px;
+        cursor:pointer;
+        font-weight:bold;
+        transition:0.3s;
+    }
+
+    .elite-right button:hover{
+        background:#ddb04e;
+    }
+
+    /* PERFECT MATCHES */
+
+    .matches-heading{
+        text-align:center;
+        font-size:48px;
+        margin-top:90px;
+        color:#02114f;
+        font-weight:bold;
+    }
+
+    .matches-heading span{
+        color:#d81b72;
+    }
+
+    /* STEPS */
+
+    .steps-container{
+        display:flex;
+        justify-content:space-around;
+        align-items:center;
+        flex-wrap:wrap;
+
+        margin-top:80px;
+        gap:30px;
+    }
+
+    .step-box{
+        text-align:center;
+        width:300px;
+    }
+
+    .icon{
+        font-size:90px;
+        margin-bottom:20px;
+        color:#d81b72;
+    }
+
+    .step-box h3{
+        font-size:32px;
+        color:#02114f;
+        margin-bottom:15px;
+    }
+
+    .step-box p{
+        font-size:17px;
+        color:#777;
+        line-height:1.6;
+    }
+
+    /* BOTTOM BAR */
+
+    .bottom-bar{
+        width:100%;
+        background:#d11267;
+        padding:15px 50px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:40px;
+        flex-wrap:wrap;
+    }
+
+    .bottom-bar h4{
+        color:white;
+        font-size:38px;
+        font-weight:500;
+    }
+
+    .bottom-bar button{
+        background:transparent;
+        border:2px solid white;
+        color:white;
+        padding:5px 20px;
+        border-radius:10px;
+        font-size:18px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    .bottom-bar button:hover{
+        background:white;
+        color:#d11267;
+    }
+    .explore-section{
+    width:100%;
+    padding:90px 60px;
+    background:#f7f7f7;
+    }
+    .explore-section h1{
+    text-align:center;
+    font-size: 48px;
+    color:#04124d;
+    font-weight:bold;
+    margin-bottom: 70px;
+    }
+
+    .explore-section h1 span{
+    color:#d81b72;
+    }
+
+    .match-grid{
+    max-width:1300px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+    }
+
+/* CARD */
+
+    .match-card{
+     background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Soft Shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .match-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color:#c2185b;
+    }
+    .scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #c2185b;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://sevenelevenclub.in/wp-content/uploads/2026/02/wedding.jpg" width="50">
+            </div>
+
+            <div class="nav-links a">
+                <a href="#">Home</a>
+                <a href="#">Login / Signup</a>
+            </div>
+        </div>
+
+        <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                World’s Leading Tamil Matrimony & Matchmaking Service
+            </h1>
+
+            <div class="buttons">
+                <button class="btn register-btn">Register With Us</button>
+                <button class="btn login-btn">Login User</button>
+            </div>
+            </div>
+        </section>
+
+        <section  class="matchmaking-section">
+            <div class="elite-card">
+                <div class="elite-left">
+                    <h1 style="text-align: center;">
+                        Tailored and Exclusive Matchmaking Services by <br>Tamil muhurtham
+                    </h1>
+
+                    <div class="elite-features">
+                        <span>Top Rated Consultants</span>
+                        <span>|</span>
+                        <span>5 times higher success rates</span>
+                        <span>|</span>
+                        <span>100% privacy guaranteed  </span>
+                    </div>
+                </div>
+
+                <div class="elite-right">
+                    <h2> Elite Matrimony</h2>
+
+                    <button>
+                        Get Invited ->
+                    </button>
+                </div>
+            </div>
+
+            <div class="matches-heading">
+                Connect with your <span>  Perfect Match</span>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-box">
+                    <div class="icon">📝</div>
+
+            <h3>Sign Up</h3>
+
+            <p>
+                Register for free & put up your Matrimony Profile
+            </p>
+
+                </div>
+                <div class="step-box">
+
+            <div class="icon">💞</div>
+
+            <h3>Connect</h3>
+
+            <p>
+                Select & Connect with Matches you like
+            </p>
+
+        </div>
+
+        <div class="step-box">
+
+            <div class="icon">💬</div>
+
+            <h3>Interact</h3>
+
+            <p>
+                Become a Premium Member & Start a Conversation
+            </p>
+
+        </div>
+            </div>
+        </section>
+
+        <section class="bottom-bar">
+
+    <h4>
+        Take Your first step in finding your perfect Match
+    </h4>
+
+    <button>Get Started</button>
+
+</section>
+
+<section class="explore-section">
+
+    <h1>
+        Explore and get <span>your perfect match</span>
+    </h1>
+
+    <div class="match-grid">
+
+        <div class="match-card">Brahmin</div>
+        <div class="match-card">Chamar</div>
+        <div class="match-card">Dhobi</div>
+
+        <div class="match-card">Brahmin-Anavil</div>
+        <div class="match-card">Brahmin-Audichya</div>
+        <div class="match-card">Brahmin-Barendra</div>
+
+        <div class="match-card">Brahmin-Bhatt</div>
+        <div class="match-card">Brahmin-Bhumihar</div>
+        <div class="match-card">Brahmin-Daivadnya</div>
+
+    </div>
+
+</section>
+   
+<button class="scroll-top">^</button>
+     </body>
+</html>
