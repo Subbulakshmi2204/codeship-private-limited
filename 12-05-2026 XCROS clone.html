@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beta</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef4f3;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* TOP BAR */
+
+        .top-bar {
+            background-color: #007b7b;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding-left: 120px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            background: white;
+        }
+
+        /* MAIN SECTION */
+
+        .main-section {
+            padding: 70px 0;
+        }
+
+        /* LEFT CONTENT */
+
+        .left-content {
+            padding-right: 30px;
+        }
+
+        .main-heading 
+        {
+            font-size: 40px;
+            color: #222;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .main-heading strong {
+            font-weight: bold;
+        }
+
+        .hero-text {
+            font-size: 34px;
+            color: #222;
+        }
+
+        .hero-text a {
+            color: #0044aa;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .launch-text {
+            font-size: 22px;
+            color: #333;
+            margin-top: 35px;
+        }
+
+        /* COUNTDOWN */
+
+        .countdown {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+            margin-bottom: 35px;
+            flex-wrap: nowrap;
+        }
+
+        .time-box {
+            text-align: center;
+        }
+
+        .number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 75px;
+            height: 65px;
+            background: #e4ecec;
+            border-radius: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .label {
+            font-size: 18px;
+            color: #444;
+        }
+
+        .community-text {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #222;
+        }
+
+        /* BUTTON */
+
+        .beta-btn {
+            width: 100%;
+            margin-top: 30px;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background-color: #ff5a00;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* SUBSCRIBE BOX */
+
+        .subscribe-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .subscribe-box input {
+            flex: 1;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .subscribe-box button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            background: #ffb000;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        /* CAROUSEL */
+
+        .carousel-box {
+            background: #007b7b;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .carousel-item img {
+            height: 650px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .footer-section
+        {
+            background:#008b8b;
+            padding:70px 0;
+            color:white;
+            position:relative
+        }
+        .footer-logo img
+        {
+            width:350px;
+            max-width: 100%;
+            margin-bottom: 30px;
+        }
+        .footer-text
+        {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .find-us
+        {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .social-icons
+        {
+            display:flex;
+            gap:15px;
+            margin-top: 20px;
+        }
+        .social-icons i
+        {
+            font-size: 28px;
+            cursor:pointer;
+        }
+        .agent-title
+        {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+        .agent-profile
+        {
+            display: flex;
+            align-items: center;
+            gap:15px;
+            margin-bottom: 30px;
+        }
+        .agent-profile img
+        {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .agent-profile h5
+        {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .info-box
+        {
+            background:rgba(255,255,255,0.08);
+            padding: 18px 20px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .info-box span
+        {
+            font-size:24px;
+        }
+        .info-box p{
+            margin:0;
+            font-size:18px;
+        }
+
+        .newsletter
+        {
+            margin-top:30px;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        .newsletter span
+        {
+            color:#ffb000;
+        }
+
+    /* BOTTOM FOOTER */
+
+        .bottom-footer
+        {
+            background:#ff9900;
+            padding:20px 0;
+            color:white;
+        }
+        .footer-bottom-content
+        {
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .left-footer,
+        .right-footer
+        {
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .left-footer p,
+        .right-footer p{
+            margin:0;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+        @media(max-width:992px)
+        {
+            .top-bar
+            {
+                padding-left: 20px;
+            }
+            .main-section
+            {
+                padding:40px 15px;
+            }
+            .left-content
+            {
+                margin-bottom: 40px;
+                padding-right: 0;
+                text-align: center;
+            }
+            .main-heading
+            {
+                font-size: 30px;
+                line-height: 1.4;
+            }
+            .hero-text
+            {
+                font-size: 24px;
+                line-height: 1.5;
+            }
+            .hero-text a
+            {
+                font-size: 18px;
+            }
+            .launch-text
+            {
+                font-size: 18px;
+                margin-top: 20px;
+            }
+            .countdown
+            {
+                justify-content: center;
+                gap: 8px;
+            }
+            .number
+            {
+                width:65px;
+                height:60px;
+                font-size: 22px;
+            }
+            .label
+            {
+                font-size: 15px;
+            }
+            .community-text
+            {
+                font-size:15px;
+                line-height:1.5;
+            }
+            .beta-btn
+            {
+                font-size:18px;
+                padding:14px;
+            }
+            .subscribe-box
+            {
+                flex-direction:column;
+            }
+            .subscribe-box button
+            {
+                width:100%;
+            }
+            .carousel-box
+            {
+                padding:10px;
+            }
+            .carousel-item img
+            {
+                height:300px;
+                object-fit: cover;
+            }
+            .footer-section
+            {
+                text-align:center;
+                padding:50px 20px;
+            }
+            .footer-logo img
+            {
+                width:220px;
+            }
+            .footer-text
+            {
+                font-size:16px;
+                line-height: 1.6;
+            }
+            .agent-title
+            {
+                margin-top:30px;
+                font-size:26px;
+            }
+            .agent-profile
+            {
+                justify-content:center;
+            }
+            .agent-profile h5
+            {
+                font-size: 20px;
+            }
+             .social-icons
+             {
+                justify-content:center;
+            }
+            .info-box
+            {
+                padding:14px 18px;
+                border-radius: 20px;
+             }
+            .info-box p
+            {
+                font-size:15px;
+                word-break: break-word;
+            }
+            .newsletter
+            {
+                font-size:18px;
+            }
+            .footer-bottom-content
+            {
+                flex-direction:column;
+                gap:12px;
+                text-align:center;
+            }
+            .left-footer,
+            .right-footer
+            {
+                justify-content:center;
+                flex-wrap:wrap;
+            }
+            .left-footer p,
+            .right-footer p
+            {
+                font-size:15px;
+            }
+
+}
+         @media (max-width: 576px) 
+         {
+            .footer-container 
+            { 
+                padding: 0 20px 40px 20px; 
+            }
+            .bottom-bar 
+            { 
+                justify-content: center; 
+                text-align: center; 
+            }
+            .number 
+            { 
+                min-width: 50px; 
+                padding: 8px; 
+                font-size: 1.2rem; 
+            }
+            .subscribe-box input
+            {
+                width:100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+
+    <div class="top-bar">
+
+        <div class="logo">
+            <img src="https://xcros.in/image/Preloader%20Logo.png" alt="XCROS Logo">
+        </div>
+
+    </div>
+
+    <!-- MAIN SECTION -->
+
+    <section class="main-section">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <!-- LEFT CONTENT -->
+
+                <div class="col-lg-5 left-content">
+
+                    <h1 class="main-heading">
+                        <strong>XCROS</strong> by
+                        <strong>GUDVIL NEXUS</strong>
+                    </h1>
+
+                    <p class="hero-text">
+                        is an <strong>All-in-one</strong><br>
+                        community platform.
+                        <a href="#">View More ></a>
+                    </p>
+
+                    <p class="launch-text">
+                        Brace yourself, for the most to come our official launch is on
+                    </p>
+
+                    <!-- COUNTDOWN -->
+
+                    <div class="countdown">
+
+                        <div class="time-box">
+                             <span class="number" id="days">18</span>
+                    <span class="label">days</span>
+                        </div>
+
+                        <div class="time-box">
+                            <span class="number" id="hours">14</span>
+                    <span class="label">hours</span>
+                        </div>
+
+                        <div class="time-box">
+                            <span class="number" id="mins">22</span>
+                    <span class="label">mins</span>
+                        </div>
+
+                        <div class="time-box">
+                              <span class="number" id="secs">31</span>
+                    <span class="label">secs</span>
+                        </div>
+
+                    </div>
+
+                    <p class="community-text">
+                        JOIN US AND MAKE A MARK IN YOUR LOCAL COMMUNITY!
+                    </p>
+
+                    <!-- BUTTON -->
+
+                    <button class="beta-btn">
+                        Enter Beta Version
+                    </button>
+
+                    <!-- SUBSCRIBE -->
+
+                    <div class="subscribe-box">
+
+                        <input type="email" placeholder="Enter your email" required>
+
+                        <button>
+                            Subscribe
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT CONTENT -->
+
+                <div class="col-lg-7">
+
+                    <div class="carousel-box">
+
+                        <!-- Bootstrap Carousel -->
+
+                        <div id="demo" class="carousel slide" data-bs-ride="carousel"><!--starts automatic sliding the carousel-->
+
+                            <!-- Indicators -->
+
+                            <div class="carousel-indicators">
+
+                                <button type="button"
+                                    data-bs-target="#demo"
+                                    data-bs-slide-to="0"
+                                    class="active">
+                                </button>
+
+                                <button type="button"
+                                    data-bs-target="#demo"
+                                    data-bs-slide-to="1">
+                                </button>
+
+                                <button type="button"
+                                    data-bs-target="#demo"
+                                    data-bs-slide-to="2">
+                                </button>
+
+                            </div>
+
+                            <!-- Carousel Images -->
+
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <img src="https://xcros.in/image/betaOne.png"
+                                        class="d-block w-100"
+                                        alt="">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="https://xcros.in/image/business.png"
+                                        class="d-block w-100"
+                                        alt="">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="https://xcros.in/image/agent.png"
+                                        class="d-block w-100"
+                                        alt="">
+                                </div>
+
+                            </div>
+
+                            <!-- PREVIOUS BUTTON -->
+
+                            <button class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#demo"
+                                data-bs-slide="prev">
+
+                                <span class="carousel-control-prev-icon"></span>
+
+                            </button>
+
+                            <!-- NEXT BUTTON -->
+
+                            <button class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#demo"
+                                data-bs-slide="next">
+
+                                <span class="carousel-control-next-icon"></span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="footer-section">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-4">
+                    <div class="footer-logo">
+                         <img src="https://xcros.in/image/new_logo.jpg" alt="">
+                </div>
+                <p class="footer-text">
+                     Our futures our intertwined, so let's rededicate ourselves
+                    to serving the common good, and if we act in that knowledge
+                    and in that spirit together, we have contributed to our
+                    evolutionary process.
+                    </p>
+                    <p class ="footer-text">
+                        Be a part of your online community.
+                    </p>
+                    <h5 class="find-us">
+                        Find us on:
+                    </h5>
+                    <div class="social-icons">
+                        <i class="bi bi-facebook"></i>
+
+                        <i class="bi bi-twitter-x"></i>
+
+                        <i class="bi bi-instagram"></i>
+
+                        <i class="bi bi-linkedin"></i>
+
+                    </div>
+        </div>
+        <div class="col-lg-4">
+            <h2 class="agent-title">
+                Project Agent
+            </h2>
+
+            <div class="agent-profile">
+                <img src="https://xcros.in/about-xcros/project-partner-pf.png">
+                
+                <h5>Project Agent</h5>
+
+            </div>
+
+            <div class="info-box">
+                <span>📧</span>
+                <p>project.agent@xcros.example</p>
+            </div>
+
+            <div class="info-box">
+                <span>📞</span>
+
+                    <p>+1 202 555 0188</p>
+            </div>
+
+            <div class="info-box">
+                <span>📍</span>
+
+                    <p>Network Plaza, XCROS Hub</p>
+            </div>
+
+            <p class="newsletter">
+                Subscribe to Global
+                <span> Newsletter →</span>
+            </p>
+        </div>
+
+        <div class="col-lg-4">
+
+            <h2 class="agent-title">
+                Network Agent
+            </h2>
+
+            <div class="agent-profile">
+                <img src="https://xcros.in/about-xcros/project-partner-pf.png">
+
+                <h5>Network Agent</h5>
+
+            </div>
+
+            <div class="info-box">
+                <span>📧</span>
+
+                    <p>network.agent@xcros.example</p>
+            </div>
+
+            <div class="info-box">
+                <span>📞</span>
+
+                    <p>+1 202 555 0172</p>
+            </div>
+
+            <div class="info-box">
+                <span>📍</span>
+
+                    <p>Location Guide Support Desk</p>
+            </div>
+
+            <p class="newsletter">
+                Subscribe to local
+                <span> Newsletter →</span>
+            </p>
+
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="footer-bottom-content">
+                <div class="left-footer">
+                    <p>
+                    2024-26 © Gudvil Nexus ®
+                    </p>
+                    <span>|</span>
+
+                    <p>
+                        Contact Us
+                    </p>
+                </div>
+                <div class="right-footer">
+                    <p>
+                        Privacy & Terms
+                    </p>
+                    <span>|</span>
+
+                    <p>
+                        🌐
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const launchDate = new Date().getTime()+ (19 * 24 * 60 * 60 * 1000);
+        const timer = setInterval(function()
+    {
+        const now = new Date().getTime();
+        const distance =launchDate - now;
+
+        document.getElementById("days").innerHTML=Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if(distance < 0)
+    {
+        clearInterval(timer);
+        document.querySelector(".countdown").innerHTML = "Launched!";
+    }
+
+    },1000);
+    </script>
+
+</body>
+
+</html>
