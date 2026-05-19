@@ -1,0 +1,202 @@
+const printNumbers = () =>
+{
+  for(let i=1;i<=10;i++)
+  {
+    console.log(i);
+  }
+}
+printNumbers();
+
+const isPalindrome = (str) => {
+  let reversed = str.split("").reverse().join("");
+
+  if (str == reversed) 
+  {
+    return "String is a Palindrome";
+  } 
+  else 
+  {
+    return "String is not a Palindrome";
+  }
+};
+
+console.log(isPalindrome("madam"));
+console.log(isPalindrome("hello"));
+
+const reverse = (s) =>
+{
+  let reversed = s.split("").reverse().join("");
+  return reversed;
+}
+console.log(reverse("Ant"));
+
+let square = (n) => n*n;
+console.log(square(5));
+
+const checknum =(n) =>
+{
+  if(n%2==0)
+  {
+    return n +" Even Number";
+  }
+  else
+  {
+    return n +" Odd Number";
+  }
+}
+console.log(checknum(2));
+console.log(checknum(5));
+
+console.log("Factorial");
+
+const fact = (n) =>
+{
+  if(n==0)
+  return 1;
+  return n*fact(n-1);
+}
+console.log(fact(5));
+
+console.log("Print numbers in reverse order")
+
+const rev = (n) =>
+{
+  for(let i=n;i>=0;i--)
+  {
+    console.log(i);
+  }
+}
+rev(10);
+
+console.log("Sum of digits");
+
+const sum = (n) =>
+{
+  let sum =0;
+  
+  while(n>0)
+  {
+    sum += n%10;
+    n = Math.floor(n/10);
+  }
+  return sum;
+}
+console.log(sum(123));
+
+console.log("Calculating sum");
+function s(a,b)
+{
+  return a+b;
+}
+console.log("Sum "+s(3,2));
+
+console.log("Check for Prime Number");
+
+function isPrime(n)
+{
+  if(n <= 1)
+  return "Not Prime";
+    for(let i=2;i<n;i++)
+    {
+      if(n%i==0)
+      return "Not Prime";
+    }
+  return "Prime";
+}
+console.log(isPrime(7));
+console.log(isPrime(10));
+
+function fibanocci(n)
+{
+  let a =0;
+  let b = 1;
+  console.log("Fibanocci Series");
+  for(let i=1;i<=n;i++)
+  {
+    console.log(a);
+    let next = a+b;
+    a=b;
+    b=next;
+  }
+}
+fibanocci(7);
+
+console.log("Counting Vowels");
+function vowels(tr)
+{
+  let v ="aeiouAEIOU";
+  let count = 0;
+  for(let ch of tr)
+  {
+    if(v.includes(ch))
+    {
+      count++;
+    }
+  }
+  return count;
+}
+console.log("Vowels: "+vowels("Python"));
+
+function findmax(arr)
+{
+  let max = arr[0];
+  for(let i=1;i<arr.length;i++)
+  {
+    if(arr[i] > max)
+    {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+console.log("Maximum value in array: "+findmax([90,100,50,11,540]));
+
+function arrsum(arr)
+{
+  let s = 0;
+  for(let i=0;i<arr.length;i++)
+  {
+    s+=arr[i];
+  }
+  return s;
+}
+console.log("Sum of values in array: "+arrsum([2,3,4,5,66]));
+
+function wordcount(t)
+{
+  return t.trim().split(" ").length;
+}
+console.log("Word count in a string: "+wordcount("Hello World!"));
+
+function swap(a,b)
+{
+  console.log("Before swap: "+a,b);
+  let temp = a;
+  a = b;
+  b = temp;
+  console.log("After swap: "+a,b);
+}
+swap(2,3);
+
+function upper(t)
+{
+  return t.toUpperCase();
+}
+console.log("String in UpperCase: "+upper("madam"));
+
+console.log("Simple Calculator");
+function calc(a,b,op)
+{
+  if(op === "+")
+  return a+b;
+  if(op === "-")
+  return a-b;
+  if(op === "*")
+  return a*b;
+  if(op === "/")
+  return a/b;
+  
+  return "Invalid Operator";
+}
+console.log(calc(3,5,"+"));
+console.log(calc(4,5,"**"));
