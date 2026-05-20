@@ -1,0 +1,53 @@
+let student = {name:"Subbulakshmi" ,age:20,course:"JavaScript"};
+function printDictionary(obj)
+{
+  console.log("Using Normal Function");
+  for(let key in obj)
+  {
+    console.log(key +" : "+obj[key]);
+  }
+}
+printDictionary(student);
+
+const printData = (obj) =>
+{
+  console.log("Using Arrow Function");
+  for(let key in obj)
+  {
+    console.log(key +" : "+obj[key]);
+  }
+}
+printData(student);
+
+console.log("Using for each");
+function foreach(obj)
+{
+ Object.keys(student).forEach(function(key)
+{
+  console.log(student[key]);
+}); 
+}
+foreach(student);
+
+
+let fruit = {apple:120,banana:80,grapes:75,mango:60};
+console.log("Using for of");
+function forof(obj)
+{
+  for(let key of Object.keys(fruit))
+{
+  console.log(key);
+}
+}
+forof(fruit);
+
+let marks={English: 72,Statistics:82,IoT:90,CV:83}
+console.log("Using for-in");
+function forin(obj)
+{
+  for(let key in marks)
+{
+  console.log(key +" : "+marks[key]);
+}
+}
+forin(marks);
