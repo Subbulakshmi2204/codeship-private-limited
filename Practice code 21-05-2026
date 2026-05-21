@@ -1,0 +1,211 @@
+console.log("User profile Dictionary");
+console.log();
+let profiles = [
+  {
+      Rollno: "E24AI055",
+      Name: "Subbulakshmi S",
+      Age: 19,
+      Course: "CS With AI"
+  },
+  {
+      Rollno: "E24AI037",
+      Name: "Rickshitha A",
+      Age: 19,
+      Course: "AI"
+  },
+  {
+      Rollno: "E24AI021",
+      Name: "Kiruthiga R",
+      Age: 18,
+      Course: "DS"
+  }
+  ];
+let profileManager = {
+  get user()
+  {
+    console.log("--GET ALL PROFILES--");
+    this.display();
+    console.log();
+  },
+  
+  getById(Rollno)
+  {
+    let user = profiles.find(u => u.Rollno === Rollno);
+    
+    if(profiles)
+    {
+      console.log("----- User Found -----");
+      console.log(user);
+    }
+    else
+    {
+      console.log("User not found");
+    }
+  },
+  
+  display() {
+    for(let i=0;i<profiles.length;i++)
+    {
+      console.log("\nProfile "+ (i+1));
+      
+      let profile = profiles[i];
+      
+      for(let key in profile)
+      {
+        console.log(key + " : "+ profile[key]);
+      }
+    }
+  },
+  post(profile)
+  {
+    profiles.push(profile);
+    
+    console.log();
+    console.log("--POST Method--");
+    console.log("Profile Added Successfully");
+    this.display();
+  },
+  put(rollno,key,value)
+  {
+    let user = profiles.find(p => p.Rollno === rollno);
+    
+    if(user)
+    {
+      user[key] = value;
+      
+      console.log();
+      console.log("--PUT Method--");
+      console.log(`${key} updated Successfully`);
+      this.display();
+    }
+    else
+    {
+      console.log("Profile not found");
+      this.display();
+    }
+  },
+  delete(rollno)
+  {
+    let index = profiles.findIndex(p => p.Rollno === rollno);
+    
+    if(index !== -1)
+    {
+      profiles.splice(index,1);
+      
+      console.log();
+      console.log("--DELETE Method--");
+      console.log(`Profile ${rollno} deleted Successfully`);
+      this.display();
+    }
+    else
+    {
+      console.log("Profile not found");
+      this.display();
+    }
+  },
+  
+  filterByAge(age)
+  {
+    console.log();
+    console.log(`--Students Age greater than ${age}--`);
+    
+    let filteredprofiles = profiles.filter(profile => profile.Age > age);
+    if(filteredprofiles.length > 0)
+    {
+      for(let i=0;i<filteredprofiles.length;i++)
+      {
+        console.log("\nProfile " + (i+1));
+        
+        for(let key in filteredprofiles[i])
+        {
+          console.log(key + " : "+ filteredprofiles[i][key]);
+        }
+      }
+    }
+    else
+    {
+      console.log("No students found");
+    }
+  }
+};
+profileManager.user;
+
+profileManager.post({
+  Rollno: "E24AI007",
+  Name: "Dharshini",
+  Age: 18,
+  Course: "AI & ML"
+});
+
+profileManager.put("E24AI055", "Age", 20);
+profileManager.getById("E24AI007");
+console.log();
+profileManager.delete("E24AI055");
+profileManager.filterByAge(18);
+profileManager.filterByAge(21);
+
+
+console.log("User profile dictionary");
+console.log();
+let profile = 
+{
+  data: 
+  {
+    Rollno: "E24AI055",
+    Name: "Subbulakshmi S",
+    Age: 19,
+    Course: "CS With AI"
+  },
+
+  // GET METHOD
+  get user() {
+    console.log("--GET Method--");
+    this.display();
+  },
+  display()
+  {
+
+    Object.entries(this.data).forEach(([key, value]) => {
+      console.log(`${key} : ${value}`);
+    });
+  },
+
+  // POST METHOD
+  post(key, value) 
+  {
+    if (this.data.hasOwnProperty(key)) {
+      console.log("--POST Method--");
+      console.log(`${key} already exists. Use PUT to update.`);
+    } 
+    else
+    {
+      this.data[key] = value;
+
+      console.log("--POST Method--");
+      console.log(`${key} added successfully`);
+    }
+
+    this.display();
+  },
+  // PUT METHOD
+  put(key, value) 
+  {
+    if (this.data[key] !== undefined) 
+    {
+      this.data[key] = value;
+
+      console.log();
+      console.log("--PUT Method--");
+      console.log(`${key} updated successfully`);
+    }
+    else 
+    {
+      console.log(`${key} not found`);
+    }
+    this.display();
+  }
+};
+profile.user;
+profile.post("Age",20);
+profile.post("Year", "3rd Year");
+profile.put("Age", 20);
