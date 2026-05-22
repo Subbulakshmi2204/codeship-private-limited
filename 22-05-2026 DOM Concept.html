@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Example</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background-color: #f2f2f2;
+            margin: 20px;
+        }
+
+        .container{
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .section{
+            margin-top: 25px;
+            padding: 15px;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+        }
+
+        h1,h2{
+            text-align: center;
+        }
+
+        input{
+            width: 95%;
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        button{
+            padding: 8px 12px;
+            margin-top: 10px;
+            margin-right: 5px;
+            background-color: steelblue;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        img{
+            display: block;
+            margin-top: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 id="title">Hello World</h1>
+
+    <!-- Text Change -->
+    <div class="section">
+
+        <button onclick="changeText()">Click Me</button>
+
+        <button onclick="changecolor()">Change Color</button>
+
+    </div>
+
+    <!-- Name Input -->
+    <div class="section">
+
+        <input type="text"
+        id="name"
+        placeholder="Enter your name">
+
+        <button onclick="showName()">Submit</button>
+
+        <h2 id="result"></h2>
+
+    </div>
+
+    <!-- Hide Show -->
+    <div class="section">
+
+        <p id="para">
+            This is a paragraph.
+        </p>
+
+        <button onclick="hideText()">Hide</button>
+
+        <button onclick="showText()">Show</button>
+
+    </div>
+
+    <!-- Image -->
+    <div class="section">
+
+        <img id="myImage"
+        src="https://static.wikia.nocookie.net/coding-help/images/6/69/JavaScript.png/revision/latest?cb=20230517123229"
+        width="200">
+
+        <button onclick="changeImage()">
+            Change Image
+        </button>
+
+    </div>
+
+    <!-- Add List -->
+    <div class="section">
+
+        <input type="text"
+        id="item"
+        placeholder="Enter item">
+
+        <button onclick="addItem()">Add</button>
+
+        <ul id="list"></ul>
+
+    </div>
+
+    <!-- Counter -->
+    <div class="section">
+
+        <h1 id="count">0</h1>
+
+        <button onclick="increase()">Increase</button>
+
+        <button onclick="decrease()">Decrease</button>
+
+    </div>
+
+    <!-- Validation -->
+    <div class="section">
+
+        <input type="text"
+        id="username"
+        placeholder="Enter username">
+
+        <button onclick="validate()">
+            Submit Form
+        </button>
+
+        <p id="msg"></p>
+
+    </div>
+
+</div>
+
+<script>
+
+    function changeText()
+    {
+        document.getElementById("title").innerHTML =
+        "Welcome to Javascript DOM";
+    }
+
+    function changecolor()
+    {
+        document.body.style.backgroundColor =
+        "lightblue";
+    }
+
+    function showName()
+    {
+        let username =
+        document.getElementById("name").value;
+
+        document.getElementById("result").innerHTML =
+        "Hello " + username;
+    }
+
+    function hideText()
+    {
+        document.getElementById("para").style.display =
+        "none";
+    }
+
+    function showText()
+    {
+        document.getElementById("para").style.display =
+        "block";
+    }
+
+    function changeImage()
+    {
+        document.getElementById("myImage").src =
+        "https://read.learnyard.com/content/images/2024/07/logo.png";
+    }
+
+    function addItem()
+    {
+        let value =
+        document.getElementById("item").value;
+
+        let li =
+        document.createElement("li");
+
+        li.innerHTML = value;
+
+        document.getElementById("list")
+        .appendChild(li);
+    }
+
+    let count = 0;
+
+    function increase()
+    {
+        count++;
+
+        document.getElementById("count").innerHTML =
+        count;
+    }
+
+    function decrease()
+    {
+        count--;
+
+        document.getElementById("count").innerHTML =
+        count;
+    }
+
+    function validate()
+    {
+        let user =
+        document.getElementById("username").value;
+
+        if(user == "")
+        {
+            document.getElementById("msg").innerHTML =
+            "Username cannot be empty";
+        }
+        else
+        {
+            document.getElementById("msg").innerHTML =
+            "Form Submitted";
+        }
+    }
+
+</script>
+
+</body>
+</html>

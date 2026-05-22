@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Events Example</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #c79e9e;
+            margin-top: 50px;
+        }
+
+        .container{
+            width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px lightgray;
+        }
+
+        h1{
+            color: #444;
+        }
+
+        #clock{
+            font-size: 45px;
+            color: #4a90e2;
+            margin: 20px;
+        }
+
+        button{
+            padding: 10px 18px;
+            margin: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4a90e2;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #357abd;
+        }
+
+        #box{
+            width: 300px;
+            height: 180px;
+            background-color: #dbeafe;
+            margin: 30px auto;
+            line-height: 180px;
+            font-size: 22px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #333;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>JavaScript Events</h1>
+
+    <div id="clock">0</div>
+
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Pause</button>
+    <button id="restartBtn">Restart</button>
+
+    <div id="box">
+        Click or Hover Me
+    </div>
+
+</div>
+
+<script>
+
+    let count = 0;
+    let timer = null;
+
+    // Start
+    document.getElementById("startBtn")
+    .addEventListener("click", function(){
+
+        if(timer === null){
+
+            timer = setInterval(function(){
+
+                count++;
+
+                document.getElementById("clock")
+                .innerText = count;
+
+            },1000);
+
+        }
+
+    });
+
+    // Pause
+    document.getElementById("stopBtn")
+    .addEventListener("click", function(){
+
+        clearInterval(timer);
+
+        timer = null;
+
+    });
+
+    // Restart
+    document.getElementById("restartBtn")
+    .addEventListener("click", function(){
+
+        clearInterval(timer);
+
+        count = 0;
+
+        document.getElementById("clock")
+        .innerText = count;
+
+        timer = setInterval(function(){
+
+            count++;
+
+            document.getElementById("clock")
+            .innerText = count;
+
+        },1000);
+
+    });
+
+    // Box Events
+    let box = document.getElementById("box");
+
+    // Mouse Over
+    box.addEventListener("mouseover", function(){
+
+        box.style.backgroundColor = "#93c5fd";
+
+        box.innerText = "Mouse Over Event";
+
+    });
+
+    // Mouse Out
+    box.addEventListener("mouseout", function(){
+
+        box.style.backgroundColor = "#dbeafe";
+
+        box.innerText = "Click or Hover Me";
+
+    });
+
+    // Click
+    box.addEventListener("click", function(){
+
+        box.style.backgroundColor = "#86efac";
+
+        box.style.color = "black";
+
+        box.innerText = "Box Clicked!";
+
+    });
+
+</script>
+
+</body>
+</html>
