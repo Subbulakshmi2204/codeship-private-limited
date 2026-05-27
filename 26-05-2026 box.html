@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>5 Box Layout</title>
+        <style>
+            body
+            {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background: rgb(69, 69, 151);
+            }
+            .row
+            {
+                display: flex;
+                justify-content: space-between;
+            }
+            .box
+            {
+                width: 180px;
+                height: 180px;
+                border: 2px solid darkred;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: beige;
+                color: black;
+            }
+            .row.center
+            {
+                justify-content: center;
+                gap: 200px;
+            }
+        </style>
+    </head>
+    <body>
+            <div class="row">
+                <div class="box">Top Left</div>
+                <div class="box">Top Right</div>
+            </div>
+            <div class="row center">
+                <div class="box">Center Right</div>
+                <div class="box">Center</div>
+                <div class="box">Center Left</div>
+            </div>
+            <div class="row">
+                <div class="box">Bottom Left</div>
+                <div class="box">Bottom Right</div>
+            </div>
+    </body>
+</html>
