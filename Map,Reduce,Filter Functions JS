@@ -1,0 +1,87 @@
+console.log("Multiply each number by 2");
+let numbers = [6,7,8,9,10];
+
+let result = numbers.map(function(num)
+{
+  return num*2;
+});
+
+console.log(result);
+console.log();
+
+console.log("Find even numbers");
+let number = [1,3,4,5,7,8];
+let evenno = number.filter(function(num)
+{
+  return num % 2 === 0;
+});
+
+console.log(evenno);
+console.log();
+
+console.log("Find sum of array");
+let sum = numbers.reduce(function(total,num)
+{
+  return total+num;
+},0);
+console.log(sum);
+console.log();
+
+console.log("Converting Name to UpperCase");
+let names =["subbu","rickshitha","dharshini","kiruthiga"];
+let uppernames = names.map(name => name.toUpperCase());
+console.log(uppernames);
+console.log();
+
+console.log("Square of numbers");
+let squares = number.map(num => num*num);
+console.log(squares);
+console.log();
+
+console.log("Filter number greater than 10");
+let no = [5,12,8,20,3,14];
+let res = no.filter(num => num > 10);
+console.log(res);
+console.log();
+
+console.log("Filter words with length greater than 4");
+let words = ['apple','cat','banana','dog','lion'];
+let longword = words.filter(word => word.length>4);
+console.log(longword);
+console.log();
+
+console.log("Product of numbers");
+let product = numbers.reduce((total,num) => total*num,1);
+console.log(product);
+
+console.log("Maximum number");
+let n = [07,45,2,33,18];
+let max = n.reduce((largest,num) => 
+{
+  return num > largest ?  num : largest;
+});
+console.log(max);
+console.log();
+
+console.log("Filter positive numbers");
+let nos = [-2,5,-1,9,0];
+let positive = nos.filter(num => num>0);
+console.log(positive);
+console.log();
+
+console.log("count total characters in words");
+let word = ['hi','hello','welcome'];
+let count = word.reduce((total,word) => total+word.length,0);
+console.log(count);
+console.log();
+
+console.log("Total marks");
+let marks = [80,75,90,60];
+let total = marks.reduce((sum,mark) => sum+mark,0);
+console.log(total);
+console.log();
+
+console.log("Get even numbers and Square them");
+let n1 = [1,2,3,4,5,6];
+let r = n1.filter(num => num % 2 === 0).map(num => num*num);
+console.log(r);
