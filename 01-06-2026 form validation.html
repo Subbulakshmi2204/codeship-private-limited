@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form</title>
+        <style>
+            *
+            {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            body
+            {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background:#fff7ed;
+                padding:20px;
+            }
+            .container
+            {
+                width: 420px;
+                background:#ffffff;
+                padding:35px;
+                border-radius:16px;
+                box-shadow:0 8px 25px rgba(0,0,0,0.08);
+            }
+            h2
+            {
+                text-align: center;
+                margin-bottom: 25px;
+                color:#9a3412;
+                font-weight: 700;
+            }
+            .input-group
+            {
+                margin-bottom: 15px;
+            }
+            input
+            {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #9a3412;
+                border-radius: 8px;
+                font-size: 14px;
+                transition: 0.3s;
+            }
+            button
+            {
+                width: 100%;
+                padding: 12px;
+                background:#ea580c;
+                color: whitesmoke;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 15px;
+                font-weight: 500;
+                transition: 0.3s;
+            }
+            .error
+            {
+                color:#dc2626;
+                font-size: 12px;
+                margin-top: 4px;
+            }
+            .success
+            {
+                color:#16a34a;
+                text-align: center;
+                margin-top: 12px;
+                font-weight: 600;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Registration Form</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Enter Fullname">
+                    <div class="error" id="nameError"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="age" placeholder="Enter Age">
+                    <div class="error" id="ageError"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="phone" placeholder="Enter Phone Number">
+                    <div class="error" id="phoneError"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="email" placeholder="Enter Email Address">
+                    <div class="error" id="emailError"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Enter Password">
+                    <div class="error" id="passwordError"></div>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                    <div class="error" id="confirmError"></div>
+                </div>
+
+                <button type="submit">Register</button>
+
+                <div class="success" id="successMsg"></div>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById("registerForm").addEventListener("submit",function(event)
+        {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let age = document.getElementById("age").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+            document.getElementById("nameError").innerHTML="";
+            document.getElementById("ageError").innerHTML="";
+            document.getElementById("phoneError").innerHTML="";
+            document.getElementById("emailError").innerHTML="";
+            document.getElementById("passwordError").innerHTML="";
+            document.getElementById("confirmError").innerHTML="";
+            document.getElementById("successMsg").innerHTML="";
+
+            let valid = true;
+
+            let nameRegex = /^[A-Za-z ]{3,30}$/;
+
+            if(!nameRegex.test(name))
+            {
+                document.getElementById("nameError").innerHTML =  "Name should contain only letters and spaces (3-30 characters)";
+                valid = false;
+            }
+
+            let ageRegex = /^(1[89]|[2-9]\d)$/;
+
+            if(!ageRegex.test(age))
+            {
+                document.getElementById("ageError").innerHTML = "Age must be between 18 and 99";
+                valid = false;
+            }
+
+            let phoneRegex = /^[6-9]\d{9}$/;
+
+            if(!phoneRegex.test(phone))
+            {
+                document.getElementById("phoneError").innerHTML = "Enter a valid 10-digit mobile number";
+                valid = false;
+            }
+
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+
+            if(!emailRegex.test(email))
+            {
+                document.getElementById("emailError").innerHTML = "Enter a valid email address";
+                valid = false;
+            }
+
+            let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%&*!])[A-Za-z\d@#$%&*!]{8,}$/;
+
+            if(!passwordRegex.test(password))
+            {
+                document.getElementById("passwordError").innerHTML = "Password must contain uppercase, lowercase, number, special character and be at least 8 characters long";
+                valid = false;
+            }
+
+            if(password !== confirmPassword)
+            {
+                document.getElementById("confirmError").innerHTML = "Passwords do not match";
+                valid = false;
+            }
+
+            if(valid)
+            {
+                document.getElementById("successMsg").innerHTML = "✅ Registration Successful!";
+        
+                document.getElementById("registerForm").reset();
+            }
+            
+        });
+        </script>
+    </body>
+</html>
