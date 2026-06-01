@@ -1,0 +1,93 @@
+console.log("Check if a string contains a word");
+let str="Hello JavaScript";
+let pattern = /JavaScript/;
+console.log(pattern.test(str));
+console.log();
+
+console.log("Validate an email address");
+let email = "user123@gmail.com";
+let pat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+console.log(pat.test(email));
+console.log();
+
+console.log("Check mobile number");
+let mobile = "9382835213";
+let patt = /^[0-9]{10}$/;
+console.log(patt.test(mobile));
+console.log();
+
+console.log("Extract numbers from string");
+let st = "Order ID: 12345";
+let result = st.match(/\d+/);
+console.log(result[0]);
+console.log();
+
+console.log("Replace Text");
+let str1="I like java";
+let result1 = str1.replace(/java/, "JavaScript");
+console.log(str1);
+console.log(result1);
+console.log();
+
+let name = "Subbulakhsmi";
+if(/^[a-zA-Z]+$/.test(name))
+{
+  console.log("Valid name");
+}
+else
+{
+  console.log("Invalid name");
+}
+console.log();
+
+console.log("Username Validation");
+let Username = "user_123";
+let regex = /^[a-zA-Z0-9_]{3,15}$/;
+console.log(regex.test(Username));
+console.log();
+
+console.log("Password Validation");
+let pass = "Test@123";
+let regex1 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}$/;
+console.log(regex1.test(pass));
+console.log();
+
+console.log("Remove Extra Spaces");
+let text = "Hello   World     JavaScript";
+console.log(text);
+let result2 = text.replace(/\s+/g," ");
+console.log(result2);
+console.log();
+
+console.log("Extract All Email Addresses");
+let text1 = "Contact us at abc@gmail.com or xyz@yahoo.com";
+let emails = text1.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g);
+console.log(text1);
+console.log(emails);
+console.log();
+
+console.log("Check Date Format");
+let date = "01/06/2026";
+let regex2 = /^\d{2}\/\d{2}\/\d{4}$/;
+console.log(regex2.test(date));
+console.log();
+
+console.log("Split a string using multiple separators");
+let data = "apple,banana;orange:mango";
+let result3 = data.split(/[,;:]/);
+console.log(data);
+console.log(result3);
+console.log();
+
+console.log("Find words starting with J");
+let text2 = "Java JavaScript Python JSP";
+let words = text2.match(/\bJ\w+/g);
+console.log(words);
+console.log();
+
+console.log("Validate PIN Code");
+let pincode = "600001";
+let regex3 = /^[1-9][0-9]{5}$/;
+console.log(regex3.test(pincode));
+console.log();
+
